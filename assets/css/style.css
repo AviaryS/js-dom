@@ -1,0 +1,72 @@
+.task4 {
+    height: 300px;
+    width: 300px;
+    border: 1px solid red;
+}
+
+#task10 {
+    width: 400px;
+}
+
+#task17 {
+    margin-bottom: 20px;
+}
+
+#task18 {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#task19 {
+    width: 300px;
+}
+
+#task20 {
+    width: 300px;
+}
+
+#task21 {    
+    width: 100px;
+
+}
+
+#task21_1 {
+    width: 100px;
+}
+
+#task25 {
+    width: 200px;
+}
+
+.task25 {
+    width: 200px;    
+    text-align: center;
+}
+
+#task26_1 {
+    width: 200px;
+}
+
+#task29_1 {
+    margin-bottom: 20px;
+}
+
+.task34_input{
+    width: 300px;
+}
+
+#task35_1.my-class {
+    color: red;
+}
+
+.task35_input {
+    width: 400px;
+}
+
+#task36 {
+    width: 200px;
+}
+
+.task38_1 {
+    width: 400px;
+}

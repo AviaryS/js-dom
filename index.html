@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <p>task 1</p>
+    <button onclick="alert('Привет!')">Нажми на меня!</button>
+    <br><br>
+
+    <p>task 2</p>
+    <button onmouseover="alert('Привет!')">наведи на меня!</button>
+    <br><br>
+
+    <p>task 3</p>
+    <button ondblclick="alert('Привет!')">Двойной счелчок по мне</button>
+    <br><br>
+
+    <p>task 4</p>
+    <div class="task4" onmouseout="alert('Привет!')">Наведи на меня мышь - а потом убери!</div>
+    <br><br>
+
+    <p>task 5</p>
+    <input type="text" value="Ку-ку" id="task5">
+    <button onclick="buttonClick5()">Нажми на меня!</button>
+    <script>
+        function buttonClick5() {
+            elem = document.getElementById('task5');
+            alert(elem.value);
+        }
+    </script>
+    <br><br>
+
+    <p>task 6</p>
+    <input type="text" value="Ку-ку" id="task6">
+    <button onclick="buttonClick6()">Нажми на меня!</button>
+    <script>
+        function buttonClick6() {
+            elem = document.getElementById('task6');
+            elem.value = 'Ой, я поменял текст';
+        }
+    </script>
+    <br><br>
+
+    <p>task 7</p>
+    <img src="./assets/img/1.jpg" alt="img" id="task7">
+    <button onclick="buttonClick7()">Нажми на меня!</button>
+    <script>
+        function buttonClick7() {
+            elem = document.getElementById('task7');
+            elem.src = './assets/img/2.jpg'
+        }
+    </script>
+    <br><br>
+
+    <p>task 8</p>
+    <input type="text" value="Нажми на меня!" id="task8"
+    onfocus="alert(this.value)">
+
+    <p>task 9</p>
+    <input type="text" value="Нажми на меня!" id="task9"
+    onclick="this.value = 'Ой, я поменял текст!'">
+    <br><br>
+
+    <p>task 10</p>
+    <input type="text" value="Нажми на меня!" id="task10"
+    onfocus="this.value = 'Ой, я поменял текст!'"
+    onblur="this.value='Ой, а теперь еще раз поменял!'">
+    <br><br>
+
+    <p>task 11</p>
+    <p>Это input type="submit".</p>
+    <input type="submit" value="Нажми на меня!" id="task11"
+    onclick="this.value = 'Ку-ку' ">
+    <br><br>
+
+    <p>task 12</p>
+    <p>Это input type="submit".</p>
+    <input type="submit" value="Нажми на меня!" id="task12"
+    onclick="this.value = 'О, теперь на меня больше не нажать!',
+    disabled = true">
+    <br><br>
+
+    <p>task 13</p>
+    <img src="./assets/img/1.jpg" alt="img"
+    onmouseover="this.src = './assets/img/2.jpg'"
+    onmouseout="this.src = './assets/img/1.jpg'">
+    <br><br>
+
+    <p>task 14</p>
+    <input type="text" value="Ку-ку" id ="task14">
+    <button onclick="go14()">Нажми на меня!</button>
+    <script>
+        function go14() {
+            elem = document.getElementById('task14');
+            elem.style = 'color: red; width: 300px;';
+        }
+    </script>
+    <br><br>
+
+    <p>task 15</p>
+    <input type="text" value="Ку-ку" id ="task15">
+    <button onclick="hide15()">Нажми на меня!</button>
+    <button onclick="show15()">Нажми потом на меня!</button>
+    <script>
+        function hide15() {
+            elem = document.getElementById('task15');
+            elem.style = 'display: none';
+        }
+
+        function show15() {
+            elem = document.getElementById('task15');
+            elem.style = 'display: inline-block';
+        }
+    </script>
+    <br><br>
+    
+    <p>task 16</p>
+    <input type="text" value="Ку-ку" id ="task16">
+    <button onclick="go16()">Нажми на меня!</button>
+    <script>
+        function go16() {
+        elem = document.getElementById('task16');
+        elem.value = 'Ой, я поменял свой текст и css!';
+        elem.style = 'width: 300px; height: 50px; color: red; border-radius: 10px;';
+        }
+    </script>
+    <br><br>
+
+    <p>task 17</p>
+    <p>Это input type="submit".</p>
+    <input type="submit" value="Нажми на меня" id="task17"
+    onclick="block()">
+    <input type="submit" value="Нажми чтобы отблокировать элемент"
+    id="task17.1" onclick="unblock()" style = "display: none">
+    <script>
+        let elem17 = document.getElementById('task17');
+        let elem17_1 = document.getElementById('task17.1');
+
+        function block() {
+            elem17.value = 'О, теперь на меня больше не нажать!';
+            elem17.disabled = true;
+            elem17_1.style = 'display: block';
+        }
+        function unblock() {
+            elem17.disabled = false;
+            elem17_1.style = 'display: none';
+            elem17.value = 'О, на меня снова можно нажать!';
+        }
+    </script>
+    <br><br>
+
+    <p>task 18</p>
+    <p>Кнопка считает кол-во нажатий по ней.</p>
+    <input type="submit" value="0" id="task18"
+    onclick="counter18()">
+    <script>
+        function counter18() {
+            elem = document.getElementById('task18');
+            ++elem.value;
+        }
+    </script>
+    <br><br>
+
+    <p>task 19</p>
+    <input type="text" value="Ку-ку" id="task19">
+    <button onclick="go19()">Нажми на меня!</button>
+    <script>
+        function go19() {
+            elem = document.getElementById('task19');
+            elem.style = 'float: right;';
+        }
+    </script>
+    <br><br>
+
+    <p>task 20</p>
+    <input type="text" value="Ку-ку" id="task20" class="eee www ddd">
+    <button onclick="go20()">Нажми на меня!</button>
+    <script>
+        function go20() {
+            elem = document.getElementById('task20');
+            elem.value = `Мои css классы: ${elem.className}`;
+        }
+    </script>
+    <br><br>
+
+    <p>task 21</p>
+    <input type="text" value="Привет!" id="task21">
+    <input type="text" value="Пока!" id="task21_1">
+    <button onclick="go21()">Нажми на меня!</button>
+    <script>
+        let elem21 = document.getElementById('task21');
+        let elem21_1 = document.getElementById('task21_1');
+        function go21() {
+            inter = elem21.value;
+            elem21.value = elem21_1.value;
+            elem21_1.value = inter;
+        }
+    </script>
+    <br><br>
+
+    <p>task 22</p>
+    <p>По нажатию на кнопку в нижнем инпуте появится
+         квадрат числа из верхнего инпута.</p>
+    <input type="text"  value placeholder="Введите число!" id="task22">
+    <input value="Здесь появится результат" id="task22_1" disabled>
+    <button onclick="go22()">Нажми на меня!</button>
+    <script>
+        let elem22 = document.getElementById('task22');
+        let elem22_1 = document.getElementById('task22_1');
+        function go22() {
+            elem22_1.value = elem22.value**2;
+        }
+    </script>
+    <br><br>
+
+    <p>task 23</p>
+    <p>По нажатию на кнопку в нижнем инпуте появится
+         квадрат числа из верхнего инпута.</p>
+    <input type="text"  value placeholder="Введите число!" id="task23">
+    <input value="Здесь появится результат" id="task23_1" disabled>
+    <button onclick="go23()">Нажми на меня!</button>
+    <script>
+        let elem23 = document.getElementById('task23');
+        let elem23_1 = document.getElementById('task23_1');
+        function go23() {
+            if (isNaN(elem23.value)) {
+                alert('Введено не число!');
+            } else {
+                elem23_1.value = elem23.value**2; 
+            }
+        }
+    </script>
+    <br><br>
+
+    <p>task 24</p>
+    <p>Обратите внимание на курсор в различных состояниях.</p>
+    <input type="submit" value="Нажми на меня!" id="task24"
+     onclick="go24()">
+    <script>
+        function go24() {
+            elem = document.getElementById('task24');
+            elem.disabled = true;
+            elem.style = "cursor: not-allowed";
+        }
+    </script>
+    <br><br>
+
+    <p>task 25</p>
+    <input type="text" value="" id="task25">
+    <br><br>
+    <input class="task25" type="submit" onclick="add('+')" value="Я добавлю +"><br>
+    <input class="task25" type="submit" onclick="add('-')" value="Я добавлю -"><br>
+    <input class="task25" type="submit" onclick="add('/')" value="Я добавлю /"><br>
+    <input class="task25" type="submit" onclick="add('*')" value="Я добавлю *"><br>
+    <br><br>
+    <input class="task25" type="submit" onclick="add('1')" value="1"><br>
+    <input class="task25" type="submit" onclick="add('2')" value="2"><br>
+    <input class="task25" type="submit" onclick="add('3')" value="3"><br>
+    <input class="task25" type="submit" onclick="add('4')" value="4"><br>
+    <input class="task25" type="submit" onclick="add('5')" value="5"><br>
+    <input class="task25" type="submit" onclick="add('6')" value="6"><br>
+    <input class="task25" type="submit" onclick="add('7')" value="7"><br>
+    <input class="task25" type="submit" onclick="add('8')" value="8"><br>
+    <input class="task25" type="submit" onclick="add('9')" value="9"><br>
+    <input class="task25" type="submit" onclick="add('0')" value="0"><br>
+    <script>
+        function add(sign) {
+            elem25 = document.getElementById('task25');
+
+            elem25.value += sign;
+        }
+    </script>
+    <br><br>
+
+
+    <!-- Свойства innerHTML, outerHTML -->
+
+    <p>task 26(1)</p>
+    <p id="task26">При нажатии на кнопку текст в абзаце поменяется.</p>
+    <input type="submit" value="Нажмите на меня" id="task26_1"
+    onclick="go26()">
+    <script>
+        function go26() {
+            elem = document.getElementById('task26');
+            elem.innerHTML = 'Ку-ку! А я <b> жирный</b>!';
+        }
+    </script>
+    <br><br>
+
+    <p>task 27(2)</p>
+    <p id="task27">При нажатии на кнопку текст в абзаце поменяется.</p>
+    <input type="submit" value="Нажмите на меня" id="task27_1"
+    onclick="go27()">
+    <script>
+        function go27() {
+            elem = document.getElementById('task27');
+            elem.outerHTML = '<h3> Абзац превратился в h3! </h3>';
+        }
+    </script>
+    <br><br>
+
+    <p>task 28(3)</p>
+    <p id="task28">При нажатии на кнопку абзац станет h3, но текст останется.</p>
+    <input type="submit" value="Нажмите на меня" id="task28_1"
+    onclick="go28()">
+    <script>
+        function go28() {
+            elem = document.getElementById('task28');
+            elem.outerHTML = `<h3> ${elem.innerHTML} </h3>`;
+        }
+    </script>
+    <br><br>
+
+    <p>task 29(4)</p>
+    <input type="text" value="" id="task29">
+    + 
+    <input type="text" value="" id="task29_1">
+    =
+    <span id="task29_2">?</span><br>
+    <button onclick="go29()">Нажмите чтобы сложить</button>
+    <script>
+        function go29() {
+            elem = Number(document.getElementById('task29').value);
+            elem2 = Number(document.getElementById('task29_1').value);
+            document.getElementById('task29_2').innerHTML = elem + elem2;
+        }
+    </script>
+    <br><br>
+
+
+
+    <!-- Метод getElementsByTagName -->
+    <div id="task30">task 30(5)
+        <p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+        <p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+        <p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+        <p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+        <h2>А я h2 и не поменяюсь!</h2>
+        <input type="submit" value="Нажмите на меня!" onclick="go30()">
+    </div>
+    <script>
+        function go30() {
+            elem = task30.getElementsByTagName('p');
+            for (let num = 0; num < elem.length; ++num) {
+                elem[num].innerHTML = 'Ку-ку!';
+            }
+        }   
+    </script>
+    <br><br>
+
+
+
+    <!-- Метод getElementsByClassName -->
+    <div id="task31">task 31(6)        
+        <h2 class="www">Заголовок с классом www.</h2>
+        <p class="www">Абзац с классом www.</p>
+        <p class="www">Абзац с классом www.</p>
+        <p>Просто абзац, не поменяется.</p>
+        <input type="submit" value="Нажмите на меня!" onclick="go31()">
+    </div>
+    <script>
+        function go31() {
+           elem = task31.getElementsByClassName('www');
+           for (let num = 0; num < elem.length; ++num) {
+                elem[num].innerHTML = num + 1;
+            }
+        }
+    </script>
+    <br><br>
+
+    
+
+    <!-- Метод querySelectorAll -->
+    <div id="task32">task 32(7)        
+        <h2 class="www">Заголовок с классом www.</h2>
+        <p class="www">Абзац с классом www.</p>
+        <p class="www">Абзац с классом www.</p>
+        <p>Просто абзац, не поменяется.</p>
+        <input type="submit" value="Нажмите на меня!" onclick="go32()">
+    </div>
+    <script>
+        function go32() {
+            elem = task32.querySelectorAll('p.www');
+            for (let num = 0; num < elem.length; ++num) {
+                elem[num].innerHTML = num + 1;
+            }
+        }
+    </script>
+    <br><br>
+
+
+
+    <!-- Методы setAttribute, getAttribute, removeAttribute, hasAttribute -->
+    <div id="task33">task 33(8)
+        <p id="task33_1" class="my-class">Абзац с class="my-class".</p>
+        <input type="submit" value="Нажми - и я выведу класс абзаца." 
+        onclick="go33()">
+    </div>
+    <script>
+        function go33() {
+            elem = task33.querySelector('#task33_1');
+            mes = task33_1.getAttribute('class');
+            alert(mes);
+        }
+    </script>
+    <br><br>
+
+    <div id="task34">task 34(9)
+        <p id="task34_1" class="my-class">Абзац с class="my-class". Класс задает красный цвет</p>
+        <input class="task34_input" type="submit" value="Нажми - и я выведу класс абзаца." 
+        onclick="go34()"><br><br>
+        <input class="task34_input" type="submit" value="Нажми - и я удалю атрибут class для абзаца." 
+        onclick="delete34()">
+    </div>
+    <script>
+        function go34() {
+            elem = task34.querySelector('#task34_1');
+            mes = task34_1.getAttribute('class');
+            alert(mes);
+        }
+        function delete34() {
+            elem = task34.querySelector('#task34_1');
+            elem.removeAttribute('class');
+            alert('Класс удален! Нажмите на первую кнопку чтобы проверить это!');
+        }
+    </script>
+    <br><br>
+
+    <div id="task35">task 35(10)
+        <p id="task35_1" class="my-class class">Абзац с class="my-class". Класс задает красный цвет</p>
+        <input class="task35_input" type="submit" value="Нажми - и я выведу класс абзаца." 
+        onclick="go35()"><br><br>
+        <input class="task35_input" type="submit" value="Нажми - и я изменю атрибут class для абзаца на 'new-class'."
+        onclick="set35()">
+    </div>
+    <script>
+        elem35 = task35.querySelector('#task35_1');
+        function go35() {
+            elem35 = task35.querySelector('#task35_1');
+            mes = task35_1.getAttribute('class');
+            alert(mes);
+        }
+        function set35() {
+            elem35 = task35.querySelector('#task35_1');
+            elem35.setAttribute('class','new-class');
+            alert('Класс изменен! Нажмите на первую кнопку чтобы проверить это!');
+        }
+    </script>
+    <br><br>
+
+
+
+    <!-- Задачи -->
+    <p>task 36(11)</p>
+    <input type="text" value placeholder="Введи в меня текст!" id="task36"
+    onkeyup="go36(this)">
+    <p id="task36_1"></p>
+    <script>
+        function go36(elem) {
+            elem36_1 = document.querySelector('#task36_1');
+            elem36_1.innerHTML = elem.value;
+        }
+    </script>
+    <br><br>
+
+    <div id="task37">task 37(12)
+        <br><br>
+        <a href="https://google.ru">ссылка 1</a>
+        <br><br>
+        <a href="https://tut.by">ссылка 2</a>
+        <br><br>
+        <a href="https://yandex.ru">ccылка 3</a>
+        <br><br>
+        <input type="submit" value="Нажмите на меня!" onclick="go37()">
+    </div>
+    <script>
+        function go37() {
+            elem = task37.getElementsByTagName('a');
+            for (let num = 0; num < elem.length; ++num) {
+                elem[num].innerHTML += elem[num].href 
+            }
+        }
+    </script>
+    <br><br>
+
+    <!-- Закрепление пройденного -->
+    <div id="task38">task 38(13)
+        <p>При нажатии на кнопку текст в абзаце поменяется.</p>
+        <input class="task38_1" type="submit" value="Нажмите на меня!" onclick="go38()">
+    </div>
+    <script>
+        function go38() {
+            elem = task38.getElementsByTagName('p');
+            elem1 = task38.getElementsByTagName('input');
+
+            elem[0].innerHTML = 'Привет, мир!';
+            elem[0].style = 'color: red;';
+            elem1[0].value = 'О, на меня больше не нажать!';
+            elem1[0].disabled = true;        
+        }
+    </script>
+    <br><br>
+
+    <div id="task39">task 39(14)
+        <p class="task39_1">
+            Абзац с текстом.
+        </p>
+        <p class="task39_1">
+            Абзац с текстом.
+        </p>
+        <p class="task39_1">
+            Абзац с текстом.
+        </p>
+        <p class="task39_1">
+            Абзац с текстом.
+        </p>
+        <p class="task39_1">
+            Абзац с текстом.
+        </p>
+        <p class="task39_1">
+            Абзац с текстом.
+        </p>
+        <p class="task39_1">
+            Абзац с текстом.
+        </p>
+        <p class="task39_1">
+            Абзац с текстом.
+        </p>
+        <input type="submit" value="Нажмите на меня!" onclick="go39()">
+    </div>
+    <script>
+        function go39() {
+            elem = task39.getElementsByClassName("task39_1");
+            for (let num = 0; num < elem.length; ++num) {
+                elem[num].innerHTML = num + 1;
+            }
+        }
+    </script>
+    <br><br>
+
+    <div id="task40">task 40(15)
+        <p class="task40_1">
+            Абзац с текстом.
+        </p>
+        <p class="task40_1">
+            Абзац с текстом.
+        </p>
+        <p class="task40_1">
+            Абзац с текстом.
+        </p>
+        <p class="task40_1">
+            Абзац с текстом.
+        </p>
+        <p class="task40_1">
+            Абзац с текстом.
+        </p>
+        <p class="task40_1">
+            Абзац с текстом.
+        </p>
+        <p class="task40_1">
+            Абзац с текстом.
+        </p>
+        <p class="task40_1">
+            Абзац с текстом.
+        </p>
+        <input type="submit" value="Нажмите на меня!" onclick="go40()">
+    </div>
+    <script>
+        function go40() {
+            elem = task40.getElementsByClassName("task40_1");
+            for (num = 0; num < elem.length; ++num) {
+                elem[num].innerHTML = (num + 1) + ". " + elem[num].innerHTML;
+            }
+        }
+    </script>
+</body>
+</html>
